@@ -1,7 +1,7 @@
-// получить картинки
+// получаем картинки
 import * as moduleGallery from "./app.js";
 
-// количество картинок
+// кол-во картинок
 const imgCount = moduleGallery.galleryItems.length;
 
 // ссылки на элементы HTML
@@ -13,7 +13,7 @@ const refs = {
     lightboxOgverlay: document.querySelector(".lightbox__overlay"),
 };
 
-// сформировать массив шаблонных строк с разметкой согласно шаблона
+// формируем массив шаблонных строк с разметкой согласно шаблона
 const imgMarkup = new Array(imgCount)
     .fill(0)
     .map((_, i) => {
@@ -66,19 +66,19 @@ function addModalListener() {
     refs.lightboxOgverlay.addEventListener("click", closeModal);
 }
 
-// убрать прослушку с модалки
+// убираем прослушку с модалки
 function removeModalListener() {
     refs.btnClose.removeEventListener("click", closeModal);
     refs.lightboxOgverlay.removeEventListener("click", closeModal);
 }
 
-// загрузить картинку
+// загружаем картинку
 function uploadPictures(src, alt) {
     refs.lightboxImage.src = src;
     refs.lightboxImage.alt = alt;
 }
 
-// закрыть модалку
+// закрываем модалку
 function closeModal(e) {
     const triggers = [
         "Escape",
@@ -99,7 +99,7 @@ function closeModal(e) {
     uploadPictures("", "");
 }
 
-// листать картинки стрелками
+// листаем картинки стрелками < >
 function leafOver(key) {
     const imgCurrentLink = document.querySelector(".lightbox__image").src;
     const currentIndex = moduleGallery.galleryItems.findIndex(
