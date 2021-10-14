@@ -14,18 +14,16 @@ const refs = {
 };
 
 // формируем массив шаблонных строк с разметкой согласно шаблона
-const imgMarkup = new Array(imgCount)
-    .fill(0)
-    .map((_, i) => {
+const imgMarkup = moduleGallery.galleryItems.map((_map) => {
         return `
     <li class="gallery__item">
     <a
       class="gallery__link"
-      href=${moduleGallery.galleryItems[i].original}
+      href=${item.original}
     >
       <img
         class="gallery__image"
-        src=${moduleGallery.galleryItems[i].preview}
+        src=${item.preview}
         data-source=${moduleGallery.galleryItems[i].original}
         alt=${moduleGallery.galleryItems[i].description}
       />
