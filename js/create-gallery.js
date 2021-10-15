@@ -14,7 +14,8 @@ const refs = {
 };
 
 // формируем массив шаблонных строк с разметкой согласно шаблона
-const imgMarkup = moduleGallery.galleryItems.map((_map) => {
+const imgMarkup = moduleGallery.galleryItems
+    .map((item, i) => {
         return `
     <li class="gallery__item">
     <a
